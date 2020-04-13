@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/FF7C7/softwarearchitect-homework-1.svg)](https://travis-ci.org/FF7C7/softwarearchitect-homework-1)
+
 ## Local
 ```bash
 git clone https://github.com/FF7C7/softwarearchitect-homework-1.git
