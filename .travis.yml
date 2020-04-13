@@ -1,0 +1,19 @@
+language: go
+go:
+  - "1.14"
+branches:
+  only:
+  - /^v.*$/
+sudo: required
+services:
+  - docker
+before_script:
+  - go test -v ./cmd/...
+script:
+  - docker build -t softwarearchitect-homework-1:$TRAVIS_TAG .
+after_success:
+  - docker login -u $DOCKER_USER -p $DOCKER_TOKEN
+  - docker tag softwarearchitect-homework-1:$TRAVIS_TAG $DOCKER_USER/softwarearchitect-homework-1:$TRAVIS_TAG
+  - docker push $DOCKER_USER/softwarearchitect-homework-1:$TRAVIS_TAG
+  - docker tag softwarearchitect-homework-1:$TRAVIS_TAG $DOCKER_USER/softwarearchitect-homework-1:latest
+  - docker push $DOCKER_USER/softwarearchitect-homework-1:latest
