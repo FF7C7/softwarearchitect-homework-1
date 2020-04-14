@@ -5,7 +5,7 @@
 git clone https://github.com/FF7C7/softwarearchitect-homework-1.git
 cd softwarearchitect-homework-1
 docker-compose up --build -d
-# check http://localhost:80/health/
+curl -vvv http://localhost:80/health/
 docker-compose logs
 docker-compose down
 ```
@@ -16,7 +16,7 @@ https://hub.docker.com/r/ff7c7/softwarearchitect-homework-1
 git clone https://github.com/FF7C7/softwarearchitect-homework-1.git
 cd softwarearchitect-homework-1/deploy
 docker-compose up -d
-# check http://localhost:80/health/
+curl -vvv http://localhost:80/health/
 docker-compose logs
 docker-compose down
 ```
